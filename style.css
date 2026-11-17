@@ -1,0 +1,410 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #070b19;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: #4338ff;
+    filter: blur(150px);
+    opacity: .25;
+    top: -100px;
+    left: -100px;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: #00d9ff;
+    filter: blur(150px);
+    opacity: .18;
+    bottom: -100px;
+    right: -100px;
+    z-index: -1;
+}
+
+header {
+    padding: 20px 7%;
+    background: #10182bd9;
+    border-bottom: 1px solid #273957;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: #00e5ff;
+}
+
+.header-info {
+    background: #1b2948;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+main {
+    max-width: 1150px;
+    min-height: 80vh;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.screen {
+    animation: appear .5s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.atom {
+    font-size: 110px;
+    margin-bottom: 20px;
+    color: #00e5ff;
+    filter: drop-shadow(0 0 25px #00d9ff);
+    animation: rotate 8s linear infinite;
+}
+
+@keyframes rotate {
+    to { transform: rotateY(360deg) rotateZ(360deg); }
+}
+
+.hero h1 {
+    font-size: clamp(35px, 6vw, 65px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #00e5ff;
+}
+
+.hero p, .subtitle {
+    color: #aab9d7;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.primary-btn {
+    padding: 16px 28px;
+    background: linear-gradient(135deg, #00e5ff, #6261ff);
+    color: #06101e;
+    border-radius: 13px;
+    font-size: 15px;
+    box-shadow: 0 5px 25px #00d9ff30;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px #00d9ff80;
+}
+
+.section-title {
+    font-size: 35px;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.topic-card {
+    background: linear-gradient(145deg, #172441, #10172c);
+    border: 1px solid #354d75;
+    border-radius: 20px;
+    padding: 25px;
+    cursor: pointer;
+    transition: .3s;
+    text-align: left;
+    color: white;
+    min-height: 190px;
+}
+
+.topic-card:hover {
+    transform: translateY(-8px) rotateX(4deg);
+    border-color: #00e5ff;
+    box-shadow: 0 12px 35px #00d9ff22;
+}
+
+.topic-icon {
+    font-size: 45px;
+    margin-bottom: 18px;
+}
+
+.topic-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.topic-card p {
+    color: #9aaccd;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.lesson-card, .quiz-card, .result-card {
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #121d37;
+    border: 1px solid #354b75;
+    border-radius: 23px;
+    box-shadow: 0 20px 50px #0005;
+}
+
+.lesson-icon {
+    font-size: 65px;
+    text-align: center;
+    margin: 15px;
+}
+
+.lesson-card h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #00e5ff;
+    margin-bottom: 25px;
+}
+
+.lesson-content {
+    color: #c5d1e8;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.lesson-content h3 {
+    color: #00e5ff;
+    margin: 22px 0 8px;
+}
+
+.lesson-content .formula {
+    background: #1c3155;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 15px 0;
+    color: #00f0ff;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+.lesson-card > .primary-btn {
+    display: block;
+    margin: auto;
+}
+
+.back-btn {
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: #293b60;
+    color: white;
+}
+
+.back-btn:hover {
+    background: #405987;
+}
+
+.quiz-card {
+    text-align: center;
+}
+
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    color: #00e5ff;
+    font-weight: bold;
+}
+
+.progress {
+    height: 8px;
+    background: #293650;
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00e5ff, #6960ff);
+    transition: .3s;
+}
+
+.question-icon {
+    font-size: 55px;
+    margin: 20px;
+}
+
+.quiz-card h2 {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.answer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.answer {
+    padding: 18px 10px;
+    background: #223354;
+    border: 1px solid #405c85;
+    color: white;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.answer:hover:not(:disabled) {
+    background: #315080;
+    transform: translateY(-3px);
+}
+
+.answer.correct {
+    background: #087c55;
+    border-color: #00ff9d;
+}
+
+.answer.wrong {
+    background: #8d2845;
+    border-color: #ff557b;
+}
+
+.answer:disabled {
+    cursor: default;
+}
+
+#feedback {
+    margin: 20px 0;
+    min-height: 25px;
+    font-weight: bold;
+}
+
+#nextBtn {
+    margin: 10px auto;
+}
+
+.result-card {
+    text-align: center;
+}
+
+.result-icon {
+    font-size: 85px;
+}
+
+.result-card h1 {
+    margin: 20px 0;
+}
+
+.result-score {
+    color: #00e5ff;
+    font-size: 55px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.result-card p {
+    margin: 15px;
+    color: #b6c7e5;
+}
+
+.result-card .back-btn {
+    display: block;
+    margin: 15px auto;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #7587a8;
+}
+
+@media(max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    main {
+        padding: 20px 12px;
+    }
+
+    .lesson-card, .quiz-card, .result-card {
+        padding: 20px 14px;
+    }
+
+    .answer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .lesson-card h1 {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEMISTRY 3D | Kimyo olami</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">⚗️ CHEMISTRY <span>3D</span></div>
+    <div class="header-info">
+        🏆 Ball: <b id="totalScore">0</b>
+    </div>
+</header>
+
+<main>
+    <section id="home" class="screen">
+        <div class="hero">
+            <div class="atom">⚛️</div>
+            <h1>KIMYO <span>OLAMIGA</span><br>XUSH KELIBSIZ!</h1>
+            <p>Kimyoni o‘rganing, yangi bilimlarga ega bo‘ling va o‘z bilimingizni sinab ko‘ring!</p>
+            <button class="primary-btn" onclick="showTopics()">
+                MAVZULARNI BOSHLASH 🚀
+            </button>
+        </div>
+    </section>
+
+    <section id="topics" class="screen hidden">
+        <h1 class="section-title">📚 KIMYO MAVZULARI</h1>
+        <p class="subtitle">O‘rganmoqchi bo‘lgan mavzuni tanlang</p>
+        <div id="topicList" class="topic-grid"></div>
+    </section>
+
+    <section id="lesson" class="screen hidden">
+        <button class="back-btn" onclick="showTopics()">⬅ Orqaga</button>
+        <div class="lesson-card">
+            <div id="lessonIcon" class="lesson-icon">⚛️</div>
+            <h1 id="lessonTitle">Mavzu nomi</h1>
+            <div id="lessonContent" class="lesson-content"></div>
+            <button class="primary-btn" onclick="startQuiz()">
+                TESTNI BOSHLASH 🎯
+            </button>
+        </div>
+    </section>
+
+    <section id="quiz" class="screen hidden">
+        <div class="quiz-card">
+            <div class="quiz-info">
+                <span id="quizNumber">1 / 10</span>
+                <span>🏆 <b id="quizScore">0</b></span>
+            </div>
+            <div class="progress">
+                <div id="progressBar"></div>
+            </div>
+            <div class="question-icon">🧪</div>
+            <h2 id="question">Savol</h2>
+            <div id="answerList" class="answer-grid"></div>
+            <p id="feedback"></p>
+            <button id="nextBtn" class="primary-btn hidden" onclick="nextQuestion()">
+                KEYINGI SAVOL ➜
+            </button>
+        </div>
+    </section>
+
+    <section id="result" class="screen hidden">
+        <div class="result-card">
+            <div class="result-icon">🏆</div>
+            <h1>TEST YAKUNLANDI!</h1>
+            <p>Natijangiz:</p>
+            <div id="resultScore" class="result-score">0 / 100</div>
+            <p id="resultMessage"></p>
+            <button class="primary-btn" onclick="showTopics()">
+                MAVZULARGA QAYTISH
+            </button>
+            <button class="back-btn" onclick="retryQuiz()">
+                QAYTA ISHLASH 🔄
+            </button>
+        </div>
+    </section>
+</main>
+
+<footer>CHEMISTRY 3D | Kimyo bilimlar olami ⚗️</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
